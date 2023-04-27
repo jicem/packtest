@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Packing Test</title>
+    <style>
+	body {
+	  text-align: center;
+	}
+    .but {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      background-color: #008CBA;
+      border-radius: 8px;
+    }
+	.ex {
+      text-align: center;
+    }
+    th,td {
+      padding: 5px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Packing Test</h1>
+	<p id="txtHint">To start packing, click the "Pack New Item" button.</p>
+	<br />
+    <button class="but" onclick="showProduct()">Pack New Item</button>
+	<p id="clickCheck"></p>
+<script>
+let clicks = 0;
+function showProduct() {
+  let n = Math.floor(Math.random() * 27) + 1;
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("txtHint").innerHTML = this.responseText;
+	document.getElementById("clickCheck").innerHTML = "Items Packed: " + clicks;
+	clicks++;
+  }
+  xhttp.open("GET", "getproduct.php?q="+n);
+  xhttp.send();
+}
+</script>
+</body>
+</html>
