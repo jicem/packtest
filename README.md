@@ -1,3 +1,5 @@
+#Packing Test
+
 A training simulation designed for somebody learning to pick and pack in a fulfillment center and coded using HTML, JavaScript (through Ajax), and PHP
 
 A brief description of each file:
